@@ -26,7 +26,7 @@ function updateTime() {
     const timeS = time.getSeconds();
     console.log('timeH, timeM, timeS :>> ', timeH, timeM, timeS);
 
-    hrsClock.querySelector('.numbers').innerHTML = String(timeH).padStart(2, '0');;
+    hrsClock.querySelector('.numbers').innerHTML = String(timeH).padStart(2, '0');
     let ticks = hrsClock.querySelectorAll('.tick')
     ticks.forEach((tick, index) => {
         if (index <= timeH / 24 * 60) {
@@ -36,7 +36,7 @@ function updateTime() {
         }
     })
 
-    minsClock.querySelector('.numbers').innerHTML = String(timeM).padStart(2, '0');;
+    minsClock.querySelector('.numbers').innerHTML = String(timeM).padStart(2, '0');
     ticks = minsClock.querySelectorAll('.tick')
     ticks.forEach((tick, index) => {
         if (index <= timeM) {
