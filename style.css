@@ -1,0 +1,102 @@
+@font-face {
+	font-family: 'LCDBOLD';
+	src: url('./LCDBOLD.eot');
+	src: local('LCDBOLD'), url('./LCDBOLD.woff') format('woff'), url('./LCDBOLD.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_523">Text with this font applied</p> */
+.fontsforweb_fontid_523 {
+	font-family: 'LCDBOLD' !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(180deg, #0d1c33 0%, black 100%);
+  font-family: "LCDBOLD", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: white;
+}
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.clock {
+  /* border: 1px #333 solid; */
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.clock .numbers {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 800%;
+}
+
+.colon {
+  font-size: 100px;
+  margin: 80px 10px;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.clock .text {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  font-size: 200%;
+  margin-top: 20px;
+}
+
+.tick {
+  position: absolute;
+  width: 4px;
+  height: 50px;
+  /* background-color: #0d1c33; */
+  background-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, #0d1c33 40%);
+  border-radius: 2px;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, 0%) rotate(60deg);
+  transform-origin: 0 150px;
+} 
+
+.tick.active{
+  background-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgb(83, 113, 150) 40%);
+  /* box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.2); */
+}
+
+.tick.active:before{
+  height: 4px;
+  width: 4px;
+  background-color: rgb(192, 174, 69);
+  box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.2);
+}
+
+.tick::before {
+  content: '';
+  background-color: rgb(192, 174, 69);
+  height: 2px;
+  width: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 2;
+  position: absolute;
+}
